@@ -19,6 +19,9 @@ export const RegisterPageContainer = styled.div`
   align-items: center;
   padding: 50px;
   font-family: 'Roboto';
+  @media screen and (max-width: 767px) {
+    height: 90vh;
+  }
 `
 
 export const ContentContainer = styled.div`
@@ -27,10 +30,16 @@ export const ContentContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 export const Image = styled.img`
   width: 400px;
+  @media screen and (max-width: 767px) {
+    width: 200px;
+  }
 `
 
 export const Form = styled.form`

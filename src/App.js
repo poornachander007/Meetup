@@ -36,7 +36,7 @@ const topicsList = [
 class App extends Component {
   state = {
     name: '',
-    topicId: topicsList[0].id,
+
     topic: topicsList[0].displayText,
     showRegisterInHome: false,
     errorMsg: false,
@@ -49,7 +49,7 @@ class App extends Component {
   onChangeTopic = topicId => {
     const topicObj = topicsList.find(item => item.id === topicId)
     const topic = topicObj.displayText
-    this.setState({topic, topicId})
+    this.setState({topic})
   }
 
   toggleShowRegister = () => {

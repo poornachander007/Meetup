@@ -22,9 +22,7 @@ const Register = props => (
   <MeetUpContext.Consumer>
     {value => {
       const {
-        showRegisterInHome,
         name,
-        topic,
         topicId,
         topicsList,
         onChangeName,
@@ -42,7 +40,8 @@ const Register = props => (
         onChangeName(event.target.value)
       }
 
-      const onClickRegisterNow = () => {
+      const onClickRegisterNow = event => {
+        event.preventDefault()
         const {history} = props
         if (name !== '') {
           toggleShowRegister()
@@ -77,7 +76,7 @@ const Register = props => (
                   ))}
                 </Select>
                 <Button type="submit">Register Now</Button>
-                {errorMsg && <ErrorPara>Please enter your name</ErrorPara>}
+                {errorMsg && <ErrorPara>*Please enter your name</ErrorPara>}
               </Form>
             </ContentContainer>
           </RegisterPageContainer>
